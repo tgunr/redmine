@@ -27,8 +27,10 @@
 /vendor/cache
 /vendor/rails
 *.rbc
-
 /.bundle
 /Gemfile.lock
 /Gemfile.local
-
+plugins/download/.svn/
+plugins/iptrust/.svn/
+plugins/sidebar/.svn/
+plugins-disabled/
