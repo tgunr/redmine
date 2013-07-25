@@ -1,0 +1,32 @@
+# Translation by Ki Won Kim (http://xyz37.blog.me, xyz37@naver.com, http://x10.mine.nu/redmine)
+ko:
+  locale_download: "다운로드"
+  locale_authorize: "권한부여"
+  locale_to_download: "다운로드"
+  locale_default: "기본값"
+
+  field_disabled: "버튼 사용 불가"
+  field_label: "레이블"
+  field_package: "패키지 이름"
+  field_include_version: "버전 포함"
+  field_file: "파일"
+
+  label_external_url: "외부 URL"
+  label_automatic: "자동"
+
+  text_value_is_going_to_be_changed: "이 값은 새로운 버전이 릴리스 되면 \"%{label}\"로 바뀝니다."
+
+  warning_file_id_reset_to_automatic: "파일이 \"다운로드\" 버튼에 대해 \"자동\"으로 재설정 되었습니다."
+  warning_consider_changing_file: "\"다운로드\" 버튼에 대한 파일 변경을 고려해야 합니다."
+
+  warning_no_file_for_download_button: "어떤 파일도 \"다운로드\" 버튼에 의해 픽업되지 않습니다."
+  warning_no_project_version_found: "프로젝트 버전이 없습니다."
+  warning_no_closed_version_found: "완료된 버전이 없습니다."
+
+  warning_wont_be_used_for_download_button: "추가된 파일이 \"다운로드\" 버튼에 의해 픽업되지 않습니다."
+  warning_not_in_version: "버전에 있지 않습니다."
+  warning_version_not_closed: "버전이 완료되지 않았습니다."
+
+  notice_file_should_be_added_to_closed_version: "\"다운로드\" 버튼을 사용하려면 완료된 버전에 파일이 추가 되어야 합니다."
+  notice_to_enable_add_closed_version: "\"다운로드\" 버튼을 사용하려면 프로젝트에 완료된 버전을 추가해야 합니다."
+  notice_to_enable_close_version: "\"다운로드\" 버튼을 사용하려면 프로젝트에 완료된 버전이 있어야 합니다."

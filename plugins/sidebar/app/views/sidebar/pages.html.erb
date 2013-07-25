@@ -1,0 +1,30 @@
+<div class="contextual">
+  <%= link_to(l(:button_back), { :controller => 'projects', :action => 'settings', :id => @project, :tab => 'sidebar' }, :class => 'icon icon-cancel') %>
+</div>
+
+<h2><%= l(:label_sidebar_visibility) %></h2>
+
+<% form = form_for(@visibility, :url => { :action => 'pages' },
+                         :html => { :method => :post }) do |f| %>
+
+  <%= error_messages_for 'visibility' %>
+
+  <fieldset id="non-sidebar-pages" class="box">
+    <legend><%= l(:label_enable_sidebar) %></legend>
+    <% SidebarPage.available_pages.each do |page| %>
+      <label>
+        <%= check_box_tag('pages[]', page.name, @visibility.enabled?(page.name), :disabled => !@visibility.available?(page.name)) %>
+        <%= h(page.caption) %>
+      </label><br />
+    <% end %>
+    <p><%= check_all_links('non-sidebar-pages') %></p>
+  </fieldset>
+
+  <p>
+    <%= submit_tag(l(:button_save)) %>
+    <%= link_to(l(:button_cancel), { :controller => 'projects', :action => 'settings', :id => @project, :tab => 'sidebar' }) %>
+  </p>
+
+<% end %>
+
+<%= form if Rails::VERSION::MAJOR >= 3 %>

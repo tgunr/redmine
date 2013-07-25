@@ -1,0 +1,19 @@
+pt:
+  locale_download: Download
+  locale_authorize: Autorizar
+  locale_to_download: para download
+  locale_default: predefinição
+
+  field_disabled: Desactivar botão
+  field_label: Etiqueta botão
+  field_package: Etiqueta pacote
+  field_include_version: Incluir a versão
+  field_file: Ficheiro
+
+  label_external_url: Endereço externo
+  label_automatic: Automático
+
+  text_value_is_going_to_be_changed: Este valor irá ser alterado para "%{label}" quando uma nova versão for criada.
+
+  warning_file_id_reset_to_automatic: Ficheiro foi colocado em "Automático" para o botão "Download".
+  warning_consider_changing_file: Considere também mudar o ficheiro para o botão "Download".

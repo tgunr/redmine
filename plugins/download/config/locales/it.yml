@@ -1,0 +1,19 @@
+it:
+  locale_download: Download
+  locale_authorize: Autorizza
+  locale_to_download: da scaricare
+  locale_default: default
+
+  field_disabled: Disabilita pulsante
+  field_label: Etichetta
+  field_package: Pacchetto
+  field_include_version: Includi versione
+  field_file: File
+
+  label_external_url: URL esterno
+  label_automatic: Automatico
+
+  text_value_is_going_to_be_changed: Questo valore verrà cambiato in "%{label}" al rilascio di una nuova versione.
+
+  warning_file_id_reset_to_automatic: File è stato resettato ad "Automatico" per il pulsante di "Download".
+  warning_consider_changing_file: Considera anche la variazione di file per il pulsante di "Download".

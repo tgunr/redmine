@@ -1,0 +1,18 @@
+<% if project.present? && project.versions.any? %>
+  <% download = DownloadButton.find_by_project_id(project.id) %>
+  <% unless download && download.disabled? %>
+    <% if controller.class.name == 'ProjectsController' ||
+          controller.class.name == 'ActivitiesController' ||
+          controller.class.name == 'WikiController' %>
+      <p><%= download_button(project, download) %></p>
+    <% elsif controller.class.name == 'VersionsController' %>
+      <% if params[:action] && params[:action] == 'show' %>
+        <% if version = Version.find_by_id(params[:id]) %>
+          <!-- render(:partial => 'download/version', :locals => { :version => version }) -->
+        <% end %>
+      <% else %>
+        <p><%= download_button(project, download) %></p>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

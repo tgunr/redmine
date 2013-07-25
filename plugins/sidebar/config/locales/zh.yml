@@ -1,0 +1,17 @@
+zh:
+  label_textile: 文本
+  label_html_code: HTML代码
+  label_overview_sidebar: 概述页
+  label_issues_sidebar: 问题页
+  label_only_for_url_regexp: "适用于URL"
+  label_except_url_regexp: "不适用于URL"
+  label_regular_expression: (含正则表达式)
+  label_sidebar: 侧边栏
+
+  field_content_type: 内容类型
+  field_location: 位置
+
+  activerecord:
+    errors:
+      messages:
+        wiki_page_not_found: "Wiki页未找到！"

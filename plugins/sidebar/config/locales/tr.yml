@@ -1,0 +1,33 @@
+tr:
+  label_textile: Metin
+  label_html_code: HTML kodu
+  label_overview_sidebar: Yan çubukta Genel içeriği
+  label_issues_sidebar: Yan çubukta işler içeriği
+  label_only_for_url_regexp: "URL için:"
+  label_except_url_regexp: "URL için değil:"
+  label_regular_expression: (Düzenli ifade)
+  label_sidebar: Yan çubuk
+
+  field_content_type: İçerik tipi
+  field_location: Konum
+
+  activerecord:
+    errors:
+      messages:
+        wiki_page_not_found: "Wiki sayfası bulunamadı"
+
+  label_sidebar_visibility: Yan çubuk görünürlüğü
+  label_per_project_policy: Proje başına yapıandırma Per-project configuration politikası
+  label_enable_sidebar: Sayfalar için yan çubuğ etkinleştir
+
+  label_global_only: Sadece Global
+  label_can_be_disabled: Devre dışı bırakılabilir
+  label_configurable_if_enabled_globally: Eğer global olarak etkinleştirildiyse yapılandırılabilir (Varsayılan olarak devre dışı)
+  label_per_project: Proje başına
+
+  label_news_list: Yeni liste
+  label_files_list: Dosya listesi
+  label_forums_list: Tartışma alanları listesi
+  label_repository_entry: Depo girdisi
+  label_annotation: Dipnot
+  label_differences_view: Fark görünümü

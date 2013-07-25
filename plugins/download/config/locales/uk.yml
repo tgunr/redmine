@@ -1,0 +1,31 @@
+uk:
+  locale_download: Завантажити
+  locale_authorize: Авторизуйтесь
+  locale_to_download: для завантаження
+  locale_default: за замовчуванням
+
+  field_disabled: Відключити кнопку
+  field_label: Мітка
+  field_package: Пакет
+  field_include_version: Включати версію
+  field_file: Файл
+
+  label_external_url: Зовнішній URL
+  label_automatic: Автоматично
+
+  text_value_is_going_to_be_changed: Коли вийде нова версія проекту це значення буде авторатично змінене на "%{label}".
+
+  warning_file_id_reset_to_automatic: Значення файлу для кнопки "Завантажити" було змінене на "Автоматично".
+  warning_consider_changing_file: Можливо вам слід також оновити налаштування кнопки "Завантажити".
+
+  warning_no_file_for_download_button: Кнопка "Завантажити" на зможе використовувати завантажені файли
+  warning_no_project_version_found: проект не має жодної версії.
+  warning_no_closed_version_found: проект не має закритих версій.
+
+  warning_wont_be_used_for_download_button: Додані файли не будуть використовуватись кнопкою "Завантажити"
+  warning_not_in_version: файли були додані у проект, а не у версію.
+  warning_version_not_closed: файли були додані у відкриту версію.
+
+  notice_file_should_be_added_to_closed_version: Щоб файл міг використовуватись для кнопки "Завантажити" його потрібно додати у закриту версію.
+  notice_to_enable_add_closed_version: Щоб кнопка "Завантажити" стала доступною у проект потрібно додати закриту версію.
+  notice_to_enable_close_version: Щоб кнопка "Завантажити" стала доступною проект повинен мати закриту версію.

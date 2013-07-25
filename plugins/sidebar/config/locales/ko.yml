@@ -1,0 +1,18 @@
+# Translation by Ki Won Kim (http://xyz37.blog.me, xyz37@naver.com)
+ko:
+  label_textile: "Text"
+  label_html_code: "HTML 코드"
+  label_overview_sidebar: "프로젝트 개요의 사이드바"
+  label_issues_sidebar: "일감의 사이드바"
+  label_only_for_url_regexp: "정규식에 포함된 URL:"
+  label_except_url_regexp: "정규식에 포함되지 않은 URL:"
+  label_regular_expression: "(<a href='http://projects.andriylesyuk.com/projects/redmine-sidebar/wiki#Install' target='_blank'>정규식</a>)"
+  label_sidebar: "사이드바"
+
+  field_content_type: "컨텐트 종류"
+  field_location: "위치"
+
+  activerecord:
+    errors:
+      messages:
+        wiki_page_not_found: "위키 페이지가 없습니다."

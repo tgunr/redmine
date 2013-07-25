@@ -1,0 +1,14 @@
+a.download {
+    background-image: url(../images/chiliproject/button.png);
+    border: 1px solid #450308;
+}
+a.download.old-version {
+    background-image: url(../images/chiliproject/old-button.png);
+    border: 1px solid #171717;
+}
+#sidebar a.download {
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.5em 0;
+}

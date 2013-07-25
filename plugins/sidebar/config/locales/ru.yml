@@ -1,0 +1,33 @@
+ru:
+  label_textile: Текст
+  label_html_code: HTML код
+  label_overview_sidebar: Вкладка "Просмотр"
+  label_issues_sidebar: Страницы задач
+  label_only_for_url_regexp: "Только URL:"
+  label_except_url_regexp: "Кроме URL:"
+  label_regular_expression: (регулярное выражение)
+  label_sidebar: Боковая панель
+
+  field_content_type: Тип содержимого
+  field_location: Размещение
+
+  activerecord:
+    errors:
+      messages:
+        wiki_page_not_found: "страница Wiki не найдена"
+
+  label_sidebar_visibility: Видимость боковой панели
+  label_per_project_policy: Политика настройки видимости для проектов
+  label_enable_sidebar: Показывать боковую панель для страниц
+
+  label_global_only: Только глобальная
+  label_can_be_disabled: Может быть отключена
+  label_configurable_if_enabled_globally: Настраиваемая если включена глобально (отключена по умолчанию)
+  label_per_project: Только для проектов
+
+  label_news_list: Список новостей
+  label_files_list: Список файлов
+  label_forums_list: Список форумов
+  label_repository_entry: Элемент хранилища
+  label_annotation: Аннотация
+  label_differences_view: Различия

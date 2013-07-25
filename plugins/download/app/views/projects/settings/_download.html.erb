@@ -1,0 +1,67 @@
+<% content_for :header_tags do %>
+  <% if defined? observe_field %>
+    <%= javascript_include_tag('download_prototype', :plugin => 'download') %>
+  <% else %>
+    <%= javascript_include_tag('download_jquery', :plugin => 'download') %>
+  <% end %>
+<% end %>
+
+<% if @project.versions.empty? %>
+<p class="nodata"><%= l(:notice_to_enable_add_closed_version) %></p>
+<% elsif latest_version(@project).nil? %>
+<p class="nodata"><%= l(:notice_to_enable_close_version) %></p>
+<% else %>
+
+<%
+@download = DownloadButton.find_by_project_id(@project.id) || DownloadButton.new unless @download
+
+files = [ ]
+latest = latest_version(@project)
+if latest && latest.attachments.any?
+    files << [ l(:label_automatic) + ' (' + h(latest.attachments.last.filename) + ')', '0' ]
+    latest.attachments.each do |file|
+        files << [ h(file.filename), file.id ]
+    end
+end
+files << [ l(:label_external_url) + ':', -1 ]
+%>
+
+<script type="text/javascript">
+//<![CDATA[
+var project_name = "<%= h(@project.name) %>";
+var version_name = "<%= h(latest.name) if latest %>";
+var default_label = "<%= h(l(:locale_download)) %>";
+var default_url = "<%= h(url_for(:controller => 'attachments',
+                                 :action     => 'download',
+                                 :id         => latest.attachments.last,
+                                 :filename   => latest.attachments.last.filename)) if latest.attachments.any? %>";
+var default_url_prefix = "<%= Setting.protocol %>://<%= Setting.host_name %>/attachments/download/";
+//]]>
+</script>
+
+<% if defined? remote_form_for %>
+
+  <% form = remote_form_for(:download, @download,
+                            :url => { :controller => 'download', :action => 'edit', :id => @project },
+                            :builder => (defined? TabularFormBuilder) ? TabularFormBuilder : Redmine::Views::LabelledFormBuilder) do |f| %>
+
+    <%= render(:partial => 'download/form', :locals => { :project => @project, :download => @download, :latest => latest, :files => files, :f => f }) %>
+
+  <% end %>
+
+<% else %>
+
+  <% form = form_for(@download, :as => :download,
+                     :url => { :controller => 'download', :action => 'edit', :id => @project },
+                     :builder => (defined? TabularFormBuilder) ? TabularFormBuilder : Redmine::Views::LabelledFormBuilder,
+                     :remote => true, :method => :post) do |f| %>
+
+    <%= render(:partial => 'download/form', :locals => { :project => @project, :download => @download, :latest => latest, :files => files, :f => f }) %>
+
+  <% end %>
+
+<% end %>
+
+<%= form if Rails::VERSION::MAJOR >= 3 %>
+
+<% end %>

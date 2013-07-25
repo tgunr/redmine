@@ -1,0 +1,17 @@
+es:
+  label_textile: Texto
+  label_html_code: código HTML
+  label_overview_sidebar: Barra lateral de Vistazo
+  label_issues_sidebar: Barra lateral de incidencia(s)
+  label_only_for_url_regexp: "Para URL:"
+  label_except_url_regexp: "No para URL:"
+  label_regular_expression: (expresión regular)
+  label_sidebar: Barra lateral
+
+  field_content_type: Tipo de contenido
+  field_location: Ubicación
+
+  activerecord:
+    errors:
+      messages:
+        wiki_page_not_found: "Página wiki no encontrada"

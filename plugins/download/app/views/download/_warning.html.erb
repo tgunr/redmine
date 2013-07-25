@@ -1,0 +1,27 @@
+<% if project.present? && params[:controller] == 'files' && params[:action] == 'new' %>
+  <% download = DownloadButton.find_by_project_id(project.id) %>
+  <% unless download && download.disabled? %>
+    <p id="download-button-warning" class="warning">
+      <% if project.versions.empty? %>
+        <%=l(:warning_no_file_for_download_button)%>: <b><%=l(:warning_no_project_version_found)%></b>
+      <% elsif project.versions.select{ |version| version.closed? }.empty? %>
+        <%=l(:warning_no_file_for_download_button)%>: <b><%=l(:warning_no_closed_version_found)%></b>
+      <% else %>
+        <%=l(:notice_file_should_be_added_to_closed_version)%>
+      <% end %>
+    </p>
+    <script type="text/javascript">
+      //<![CDATA[
+      <% if defined? observe_field %>
+        <% if defined?(ChiliProject) && ChiliProject::VERSION::MAJOR >= 3 %>
+            $$('#content .box').first().insert({ before: $('download-button-warning').remove() });
+        <% else %>
+            $('download-button-warning').previous().insert({ before: $('download-button-warning').remove() });
+        <% end %>
+      <% else %>
+        $('#download-button-warning').prev().before($('#download-button-warning').remove());
+      <% end %>
+      //]]>
+    </script>
+  <% end %>
+<% end %>

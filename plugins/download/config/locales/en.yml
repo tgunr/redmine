@@ -1,0 +1,31 @@
+en:
+  locale_download: Download
+  locale_authorize: Authorize
+  locale_to_download: to download
+  locale_default: default
+
+  field_disabled: Disable button
+  field_label: Label
+  field_package: Package
+  field_include_version: Include version
+  field_file: File
+
+  label_external_url: External URL
+  label_automatic: Automatic
+
+  text_value_is_going_to_be_changed: This value is going to be changed to "%{label}" when a new version is released.
+
+  warning_file_id_reset_to_automatic: File for the "Download" button has been reset to "Automatic".
+  warning_consider_changing_file: Consider also changing file for the "Download" button.
+
+  warning_no_file_for_download_button: No file is going to be picked up by the "Download" button
+  warning_no_project_version_found: no project version found.
+  warning_no_closed_version_found: no closed version found.
+
+  warning_wont_be_used_for_download_button: Added file(s) won't be picked up by the "Download" button
+  warning_not_in_version: not in a version.
+  warning_version_not_closed: version is not closed.
+
+  notice_file_should_be_added_to_closed_version: To be used by the "Download" button a file should be added to a closed version.
+  notice_to_enable_add_closed_version: To enable the "Download" button you need to add a closed version to the project.
+  notice_to_enable_close_version: To enable the "Download" button you need to have a closed version.

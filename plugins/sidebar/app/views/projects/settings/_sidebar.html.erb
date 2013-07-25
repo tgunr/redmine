@@ -1,0 +1,48 @@
+<% content_for :header_tags do %>
+  <% if defined? observe_field %>
+    <%= javascript_include_tag('toggle_functions_prototype', :plugin => 'sidebar') %>
+  <% else %>
+    <%= javascript_include_tag('toggle_functions_jquery', :plugin => 'sidebar') %>
+  <% end %>
+<% end %>
+
+<% if defined? remote_form_for %>
+
+  <% form = remote_form_for(:sidebar, :url => { :controller => 'sidebar', :action => 'edit', :id => @project },
+                                      :html => { :id => 'sidebar-content-form', :class => 'tabular' }) do %>
+
+    <%= render(:partial => 'sidebar/form', :locals => { :sidebar => @sidebar, :project => @project }) %>
+
+    <span id="preview-link"<%= ' style="display: none;"'.html_safe unless (params[:sidebar] && params[:sidebar][:content_type].present?) ||
+                                                                          (@sidebar && @sidebar.content_type.present?) %>>
+      <%= link_to_remote(l(:label_preview),
+        { :url => { :controller => 'sidebar', :action => 'preview', :id => @project },
+          :method => 'post',
+          :update => 'preview',
+          :with => "Form.serialize('sidebar-content-form')",
+          :complete => "Element.scrollTo('preview')"
+        }, :accesskey => accesskey(:preview)) %>
+    </span>
+
+  <% end %>
+
+<% else %>
+
+  <% form = form_for(:sidebar, :url => { :controller => 'sidebar', :action => 'edit', :id => @project },
+                               :html => { :id => 'sidebar-content-form', :class => 'tabular' },
+                               :remote => true) do %>
+
+    <%= render(:partial => 'sidebar/form', :locals => { :sidebar => @sidebar, :project => @project }) %>
+
+    <span id="preview-link"<%= ' style="display: none;"'.html_safe unless (params[:sidebar] && params[:sidebar][:content_type].present?) ||
+                                                                          (@sidebar && @sidebar.content_type.present?) %>>
+      <%= preview_link({ :controller => 'sidebar', :action => 'preview', :id => @project }, 'sidebar-content-form') %>
+    </span>
+
+  <% end %>
+
+<% end %>
+
+<%= form if Rails::VERSION::MAJOR >= 3 %>
+
+<div id="preview" class="wiki"></div>

@@ -1,0 +1,32 @@
+<%= error_messages_for('download') %>
+
+<div class="box tabular">
+  <div id="download-button" style="<%= 'display: none;' if download.disabled? %>">
+    <%= download_button(project, download, :force => true) %>
+  </div>
+  <p>
+    <%= f.check_box(:disabled, :onclick => 'toggle_download_form(this);') %>
+  </p>
+  <div id="download-button-settings" style="<%= 'display: none;' if download.disabled? %>">
+    <p><%= f.text_field(:label, :size => 30, :onchange => 'update_download_button(this, project_name, version_name, default_label, default_url, default_url_prefix);') %> <em>(<%= l(:locale_default) %>: <%= l(:locale_download) %>)</em></p>
+    <p><%= f.text_field(:package, :size => 30, :onchange => 'update_download_button(this, project_name, version_name, default_label, default_url, default_url_prefix);') %> <em>(<%= l(:locale_default) %>: <%= h(project.name) %>)</em></p>
+    <p><%= f.check_box(:include_version, :onclick => 'update_download_button(this, project_name, version_name, default_label, default_url, default_url_prefix);') %></p>
+    <p>
+      <% if latest.attachments.any? %>
+        <%= f.select(:file_id, files, {}, :onchange => 'toggle_download_external_url(this); update_download_button(this, project_name, version_name, default_label, default_url, default_url_prefix);') %>
+        <span id="download-button-url" style="<%= 'display: none;' unless download.file_id.to_i < 0 %>">
+          <%= f.text_field(:url, :size => 60, :no_label => true, :onchange => 'update_download_button(this, project_name, version_name, default_label, default_url, default_url_prefix);') %> <em>(http://...)</em>
+        </span>
+        <br />
+        <em id="download-button-hint" style="<%= 'display: none;' unless download.file_id.to_i > 0 %>">
+          <%= l(:text_value_is_going_to_be_changed, :label => l(:label_automatic)) %>
+        </em>
+      <% else %>
+        <%= f.hidden_field(:file_id, :value => '-1') %>
+        <%= f.text_field(:url, :size => 60, :label => l(:label_external_url), :onchange => 'update_download_button(this, project_name, version_name, default_label, default_url, default_url_prefix);') %> <em>(http://...)</em>
+      <% end %>
+    </p>
+  </div>
+</div>
+
+<%= submit_tag(l(:button_save)) %>

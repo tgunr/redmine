@@ -1,0 +1,44 @@
+a.download {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #67b243;
+    background-image: url(../images/button.png);
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    border: 1px solid #288c44;
+    color: #f8f8f8 !important;
+    padding: 2px 20px 2px 0;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+a.download.old-version {
+    background-color: #8f8f8f;
+    background-image: url(../images/old-button.png);
+    border: 1px solid #777;
+}
+a.download span.icon-download {
+    background-image: url(../images/arrow.gif);
+    background-position: 7px center;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    display: block;
+}
+a.download.old-version span.icon-download {
+    background-image: url(../images/old-arrow.gif);
+}
+a.download .version {
+    display: block;
+    font-size: 70%;
+    font-weight: normal;
+    margin-top: -3px;
+}
+#download-button {
+    margin: 0.5em 0.5em 0 0;
+    float: right;
+}
+#content .wiki a.download {
+    margin: 0.25em 1em;
+}

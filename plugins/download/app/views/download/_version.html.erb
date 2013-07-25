@@ -1,0 +1,11 @@
+<% @latest_version = latest_version(@project) %>
+
+<% if version.id == @latest_version.id %>
+  <% @download = DownloadButton.find_by_project_id(@project.id) %>
+<% else %>
+  <% @download = DownloadButton.from_options(@project, :version_id => version.id, :include_version => true) %>
+<% end %>
+
+<% if @download && !@download.disabled? %>
+  <p><%= download_button(@project, @download, :class => (version.id != @latest_version.id) ? 'old-version' : '') %></p>
+<% end %>

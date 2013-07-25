@@ -1,0 +1,31 @@
+tr:
+  locale_download: İndir
+  locale_authorize: İzin ver
+  locale_to_download: to download
+  locale_default: Varsayılan
+
+  field_disabled: Düğmeyi devre dışı bırak
+  field_label: Etiket
+  field_package: Paket
+  field_include_version: Sürümü dahil et
+  field_file: Dosya
+
+  label_external_url: Harici bağlantı
+  label_automatic: Otomatik
+
+  text_value_is_going_to_be_changed: Yeni bir sürüm yayınlandığında bu değer "%{label}" değerine dönüşecek.
+
+  warning_file_id_reset_to_automatic: Dosya "İndir" düğmesi için "Otomatik" 'e sıfırlandı.
+  warning_consider_changing_file: Ayrıca "İndir" düğmesi için dosyayı değiştirmeyi de göz önüne alın.
+
+  warning_no_file_for_download_button: İndir düğmesi tarafından hiç bir dosya seçilmeyecek.
+  warning_no_project_version_found: Proje sürümü bulunamadı.
+  warning_no_closed_version_found: Kapatılmış sürüm bulunamadı.
+
+  warning_wont_be_used_for_download_button: Eklenmiş dosya(lar) "İndir" düğmesi tarafından seçilmeyecek
+  warning_not_in_version: bir sürüm içinde değil.
+  warning_version_not_closed: sürüm kapatılmadı.
+
+  notice_file_should_be_added_to_closed_version: İndir düğmesi tarafından kullanılabilmesi için bir dosanın kapatılmış bir sürüme eklenmesi gerekir.
+  notice_to_enable_add_closed_version: İndir düğmesini etkinleştirmek için projeye kapatılmış bir sürüm eklemelisiniz.
+  notice_to_enable_close_version: İndir düğmesini etkinleştirmek için kapatılmış bir sürüme sahip olmalısınız.

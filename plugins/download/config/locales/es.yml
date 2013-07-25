@@ -1,0 +1,16 @@
+es:
+  locale_download: Descargar
+  locale_authorize: Autorizar
+  locale_to_download: para descarga
+  locale_default: por defecto
+
+  field_disabled: Desactivar botón
+  field_label: Etiqueta
+  field_package: Paquete
+  field_include_version: Incluye versión
+  field_file: Fichero
+
+  label_external_url: URL externa
+  label_automatic: Automático
+
+  text_value_is_going_to_be_changed: Este valor va a ser cambiado a  "%{label}" cuando una nueva versión aparezca.

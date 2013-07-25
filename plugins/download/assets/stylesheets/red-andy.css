@@ -1,0 +1,14 @@
+a.download {
+    background-color: #536a3f !important;
+    background-image: url(../images/red-andy/button.png) !important;
+    background-position: left top !important;
+    border-color: #afc69c #435335 #435335 #afc69c !important;
+}
+a.download.old-version {
+    background-color: #5e5e5e !important;
+    background-image: url(../images/red-andy/old-button.png) !important;
+    border-color: #bababa #4b4b4b #4b4b4b #bababa !important;
+}
+#content .wiki a.download {
+    font-family: Tahoma, Verdana;
+}

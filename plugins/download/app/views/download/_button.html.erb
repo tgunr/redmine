@@ -1,0 +1,8 @@
+<% css_classes = style.blank? ? "download" : "download #{style}" %>
+<% css_styles = align && (align.downcase == 'left' || align.downcase == 'right') ? " style=\"float: #{align};\"" : "" %>
+<a href="<%= h(link) %>" class="<%= h(css_classes) %>"<%= css_styles %>>
+  <span class="icon-download">
+    <%= h(label) %>
+    <span class="version"><%= h(package) %></span>
+  </span>
+</a>

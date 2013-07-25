@@ -1,0 +1,78 @@
+<% if @notice %>
+  <div class="flash notice"><%= @notice %></div>
+<% end %>
+
+<%= error_messages_for 'sidebar' %>
+
+<div class="box">
+  <p>
+    <%= label_tag('sidebar[content_type]', l(:field_content_type)) %>
+    <%= select_tag('sidebar[content_type]',
+                    options_for_select([ [ l(:label_disabled), nil ],
+                                         [ l(:label_textile), 'text' ],
+                                         [ l(:label_wiki_page), 'wiki' ],
+                                         [ l(:label_html_code), 'html' ] ],
+                                       params[:sidebar] ? params[:sidebar][:content_type] :
+                                       sidebar ? sidebar.content_type : nil),
+                   :onchange => "toggle_sidebar_form_visibility(this.value);") %>
+  </p>
+  <div id="sidebar-content-data"<%= ' style="display: none;"'.html_safe unless (params[:sidebar] && params[:sidebar][:content_type].present?) ||
+                                                                               (sidebar && sidebar.content_type.present?) %>>
+    <div id="content-text"<%= ' style="display: none;"'.html_safe unless (params[:sidebar] && params[:sidebar][:content_type] == 'text') ||
+                                                                       (sidebar && sidebar.content_type == 'text') %>>
+      <p>
+        <%= label_tag('sidebar[content][text]', l(:label_textile).html_safe + ' '.html_safe + content_tag(:span, '*', :class => 'required')) %>
+        <%= text_area_tag('sidebar[content][text]',
+                           params[:sidebar] && params[:sidebar][:content_type] == 'text' ? params[:sidebar][:content][:text] :
+                           sidebar && sidebar.content_type == 'text' ? sidebar.content : nil,
+                          :cols => 100, :rows => 10, :class => 'wiki-edit') %>
+        <%= wikitoolbar_for('sidebar_content_text') %>
+      </p>
+    </div>
+    <div id="content-wiki"<%= ' style="display: none;"'.html_safe unless (params[:sidebar] && params[:sidebar][:content_type] == 'wiki') ||
+                                                                         (sidebar && sidebar.content_type == 'wiki') %>>
+      <p>
+        <%= label_tag('sidebar[content][wiki]', l(:label_wiki_page).html_safe + ' '.html_safe + content_tag(:span, '*', :class => 'required')) %>
+        <%= text_field_tag('sidebar[content][wiki]',
+                            params[:sidebar] && params[:sidebar][:content_type] == 'wiki' ? params[:sidebar][:content][:wiki] :
+                            sidebar && sidebar.content_type == 'wiki' ? sidebar.content : nil,
+                           :size => 60) %>
+      </p>
+    </div>
+    <div id="content-html"<%= ' style="display: none;"'.html_safe unless (params[:sidebar] && params[:sidebar][:content_type] == 'html') ||
+                                                                         (sidebar && sidebar.content_type == 'html') %>>
+      <p>
+        <%= label_tag('sidebar[content][html]', l(:label_html_code).html_safe + ' '.html_safe + content_tag(:span, '*', :class => 'required')) %>
+        <%= text_area_tag('sidebar[content][html]',
+                           params[:sidebar] && params[:sidebar][:content_type] == 'html' ? params[:sidebar][:content][:html] :
+                           sidebar && sidebar.content_type == 'html' ? sidebar.content : nil,
+                          :cols => 100, :rows => 10, :style => 'width: 99%;') %>
+      </p>
+    </div>
+    <p>
+      <%= label_tag('sidebar[location]', l(:field_location)) %>
+      <%= select_tag('sidebar[location]',
+                      options_for_select([ [ l(:label_overview_sidebar), 'project' ],
+                                           [ l(:label_issues_sidebar), 'issues' ],
+                                           [ l(:label_only_for_url_regexp), 'only_regexp' ],
+                                           [ l(:label_except_url_regexp), 'except_regexp' ] ],
+                                         params[:sidebar] ? params[:sidebar][:location] :
+                                         sidebar ? sidebar.location : nil),
+                     :onchange => "toggle_url_regexp_visibility(this.value);") %>
+      <span id="url-regexp"<%= ' style="display: none;"'.html_safe unless (params[:sidebar] && (params[:sidebar][:location] == 'only_regexp' || params[:sidebar][:location] == 'except_regexp')) ||
+                                                                          (sidebar && (sidebar.location == 'only_regexp' || sidebar.location == 'except_regexp')) %>>
+        <%= l(:label_regular_expression) %>
+        <%= text_field_tag('sidebar[url_regexp]',
+                            params[:sidebar] && (params[:sidebar][:location] == 'only_regexp' || params[:sidebar][:location] == 'except_regexp') ? params[:sidebar][:url_regexp] :
+                            sidebar && (sidebar.location == 'only_regexp' || sidebar.location == 'except_regexp') ? sidebar.url_regexp : nil,
+                           :size => 40) %>
+      </span>
+    </p>
+  </div>
+</div>
+
+<div class="contextual">
+  <%= link_to(l(:label_sidebar_visibility), { :controller => 'sidebar', :action => 'pages', :id => project }, :class => 'icon icon-sidebar') unless Setting.plugin_sidebar[:policy] == 'global' %>
+</div>
+
+<%= submit_tag(l(:button_save)) %>

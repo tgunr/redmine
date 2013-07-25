@@ -1,0 +1,33 @@
+en:
+  label_textile: Text
+  label_html_code: HTML code
+  label_overview_sidebar: Overview sidebar
+  label_issues_sidebar: Issue(s) sidebar
+  label_only_for_url_regexp: "For URL:"
+  label_except_url_regexp: "Not for URL:"
+  label_regular_expression: (regular expression)
+  label_sidebar: Sidebar
+
+  field_content_type: Content type
+  field_location: Location
+
+  activerecord:
+    errors:
+      messages:
+        wiki_page_not_found: "Wiki page not found"
+
+  label_sidebar_visibility: Sidebar visibility
+  label_per_project_policy: Per-project configuration policy
+  label_enable_sidebar: Enable sidebar for pages
+
+  label_global_only: Global only
+  label_can_be_disabled: Can be disabled
+  label_configurable_if_enabled_globally: Configurable if enabled globally (disabled by default)
+  label_per_project: Per-project only
+
+  label_news_list: News list
+  label_files_list: Files list
+  label_forums_list: Forums list
+  label_repository_entry: Repository entry
+  label_annotation: Annotation
+  label_differences_view: Differences view

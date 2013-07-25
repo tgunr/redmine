@@ -1,0 +1,39 @@
+<% content_for :header_tags do %>
+  <% if defined? observe_field %>
+    <%= javascript_include_tag('toggle_functions_prototype', :plugin => 'sidebar') %>
+  <% else %>
+    <%= javascript_include_tag('toggle_functions_jquery', :plugin => 'sidebar') %>
+  <% end %>
+<% end %>
+
+<h2><%= l(:label_sidebar_visibility) %></h2>
+
+<% form = form_tag do %>
+
+  <fieldset class="box">
+    <legend><%= l(:label_per_project_policy) %></legend>
+    <%= select_tag('sidebar_settings[policy]',
+                    options_for_select([ [ l(:label_global_only), 'global' ],
+                                         [ l(:label_can_be_disabled), 'disable' ],
+                                         [ l(:label_configurable_if_enabled_globally), 'configurable' ],
+                                         [ l(:label_per_project), 'project' ] ],
+                                       @settings['policy']),
+                   :onchange => "toggle_sidebar_pages_visibility(this.value);") %>
+  </fieldset>
+
+  <fieldset id="non-sidebar-pages" class="box"<%= (@settings['policy'] == 'project') ? ' style="display: none;"' : '' %>>
+    <legend><%= l(:label_enable_sidebar) %></legend>
+    <% SidebarPage.available_pages.each do |page| %>
+      <label>
+        <%= check_box_tag('sidebar_settings[pages][]', page.name, @settings['pages'] && @settings['pages'].include?(page.name.to_s)) %>
+        <%= h(page.caption) %>
+      </label><br />
+    <% end %>
+    <p><%= check_all_links('non-sidebar-pages') %></p>
+  </fieldset>
+
+  <%= submit_tag(l(:button_save)) %>
+
+<% end %>
+
+<%= form if Rails::VERSION::MAJOR >= 3 %>

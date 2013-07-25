@@ -1,0 +1,31 @@
+ru:
+  locale_download: Загрузить
+  locale_authorize: Авторизируйтесь
+  locale_to_download: чтобы загрузить
+  locale_default: по умолчанию
+
+  field_disabled: Отключить кнопку
+  field_label: Метка
+  field_package: Пакет
+  field_include_version: Включать версию
+  field_file: Файл
+
+  label_external_url: Внешний URL
+  label_automatic: Автоматически
+
+  text_value_is_going_to_be_changed: При выходе новой версии это значение будет изменено на "%{label}".
+
+  warning_file_id_reset_to_automatic: Значение файла для кнопки "Загрузить" было изменено на "Автоматически".
+  warning_consider_changing_file: Возможно также следует исправить настройки кнопки "Загрузить".
+
+  warning_no_file_for_download_button: Кнопка "Загрузить" не сможет использовать загруженные файлы
+  warning_no_project_version_found: у проекта нету версий.
+  warning_no_closed_version_found: у проекта нету закрытых версий.
+
+  warning_wont_be_used_for_download_button: Загруженные файлы не будут использоваться кнопкой "Загрузить"
+  warning_not_in_version: файлы были добавлены непосредственно в проект.
+  warning_version_not_closed: файлы были добавлены в открытую версию.
+
+  notice_file_should_be_added_to_closed_version: Чтобы файл мог использоваться кнопкой "Загрузить" он должен быть добавлен в закрытую версию.
+  notice_to_enable_add_closed_version: Чтобы активировать кнопку "Загрузить" нужно добавить в проект закрытую версию.
+  notice_to_enable_close_version: Чтобы кнопка "Загрузить" стала активной проект должен иметь закрытую версию.

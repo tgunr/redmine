@@ -1,0 +1,19 @@
+de:
+  label_textile: Text
+  label_html_code: HTML-Code
+  label_overview_sidebar: Projekt-Überblick
+  label_issues_sidebar: Ticket-Sidebar
+  label_only_for_url_regexp: "Für URL:"
+  label_except_url_regexp: "Nicht für URL:"
+  label_regular_expression: (Regulärer Ausdruck)
+  label_sidebar: "Sidebar"
+  label_textile: "Textile"
+
+  field_content_type: Inhaltstyp
+  field_location: Ort
+
+
+  activerecord:
+    errors:
+      messages:
+        wiki_page_not_found: "Wiki-Seite nicht gefunden"

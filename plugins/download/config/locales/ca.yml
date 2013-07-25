@@ -1,0 +1,16 @@
+ca:
+  locale_download: Descarregar
+  locale_authorize: Autoritzar
+  locale_to_download: per a descàrrega
+  locale_default: per defecte
+
+  field_disabled: Desactivar botó
+  field_label: Etiqueta
+  field_package: Paquet
+  field_include_version: Inclou versió
+  field_file: Fitxer
+
+  label_external_url: URL externa
+  label_automatic: Automàtic
+
+  text_value_is_going_to_be_changed: Aquest valor serà canviat a "%{label}" quan una nova versió aparegui.
