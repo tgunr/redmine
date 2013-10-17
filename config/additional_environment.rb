@@ -9,4 +9,4 @@
 #
 
 config.logger = Logger.new('/usr/share/redmine/log/production.log', 2, 1000000)
-config.logger.level = Logger::DEBUG
+#config.logger.level = Logger::DEBUG
