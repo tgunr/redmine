@@ -1,0 +1,51 @@
+h1. What does it do?
+
+This redmine plugin exposes extra macros in your redmine wikis. These macros are used to dynamically load css file, js file or inject raw HTML into your wiki page.
+
+h2. Exposed Macros
+
+* css_url()
+* js_url()
+* html()
+
+h1. Examples
+
+<pre><code>{{html(
+<ul>
+   <li>option 1</li>
+   <li>option 2</li>
+   <li>option 3</li>
+</ul>
+)}}</code></pre>
+
+h3. Beta Macros
+You can also use <code>css()</code> macro to embedd raw CSS into the middle of a wiki page. You must replace all <strong>{ }</strong> with <strong>[ ]</strong>.
+
+<pre><code>{{css(
+.fooClass[  
+  color:red;
+  padding:15px;
+]
+#barID[
+  margin-left:15px;
+]
+)}}</code></pre>
+
+h1. See it in action
+
+Visit the original blog post for a video of the plugin in action.
+"arlocarreon.com/blog/redmine/redmine-wiki-html-utility/":http://www.arlocarreon.com/blog/redmine/redmine-wiki-html-utility/
+
+h1. Installation
+
+Navigate to:
+@[redmine_install_path]/vendors/plugins@
+
+Clone this repo:
+@git clone git://github.com/mexitek/redmine_wiki_html_util.git@
+
+Restart Redmine (example below is using bitnami stack): 
+@sudo /etc/init.d/bitnami restart@
+
+h1. License: "arlo.mit-license.org":http://arlo.mit-license.org
+ 
