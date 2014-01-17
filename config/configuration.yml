@@ -87,9 +87,11 @@ default:
       address: mail.playnet.com
       port: 25
       domain: playnet.com
-      authentication: :plain
-      user_name: "redmine@playnet.com"
-      password: "F*kt@rd?"
+      authentication: :login
+      user_name: redmine@playnet.com
+      password: F*kt@rd?
+      enable_starttls_auto: false
+      openssl_verify_mode: 'none'
 
   # Absolute path to the directory where attachments are stored.
   # The default is the 'files' directory in your Redmine instance.
